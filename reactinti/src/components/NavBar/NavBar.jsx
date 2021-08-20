@@ -12,7 +12,8 @@ import {FiTwitter}  from "react-icons/fi";
 import {FiPhoneCall}  from "react-icons/fi";
 import {MdWork}  from "react-icons/md";
 import {BsQuestionOctagon} from "react-icons/bs"
-import {FiShoppingCart} from "react-icons/fi"
+import CarWidget from '../CarWidget/CarWidget';
+
 
 
 function NavBar() {
@@ -34,7 +35,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-          <Nav.Link href="#deets"><FiShoppingCart /></Nav.Link>
+          <Nav.Link href="#deets"><CarWidget/></Nav.Link>
             <Nav.Link href="#deets"><MdWork />Trabaja con nosotros</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
              <BsQuestionOctagon/> FAQ
