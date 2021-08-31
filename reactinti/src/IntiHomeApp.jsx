@@ -2,13 +2,13 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './containers/ItemListContainer';
-import ItemList from './components/Items/ItemList';
+import ItemListContainer from './containers/ItemList/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
 
 
 
-
+  
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
       <NavBar />
       <ItemCount initial={1} stock={5} onAdd= {onAdd}/>
       <ItemListContainer greeting={"hola"}/>
-      
+      <ItemDetailContainer/>
     </div>
 
     

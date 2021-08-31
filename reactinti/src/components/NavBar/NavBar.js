@@ -2,7 +2,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {FaPlane} from "react-icons/fa";
 import {BsSun} from "react-icons/bs";
 import {AiTwotoneShopping} from "react-icons/ai";
 import {ImAirplane} from "react-icons/im";
