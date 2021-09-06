@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './containers/ItemList/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 
 
 
@@ -20,10 +22,16 @@ function App() {
 }
   return (
     <div className="Inti">
-      <NavBar />
-      <ItemCount initial={1} stock={5} onAdd= {onAdd}/>
-      <ItemListContainer greeting={"hola"}/>
-      <ItemDetailContainer/>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={ItemListContainer}/>
+          <Route exact path={"/categoria/:category"} component={ItemListContainer}/>
+          <Route exact path={"/all/:sex"} component={ItemListContainer}/>
+          <Route exact path={"/detalle/:id"} component={ItemDetailContainer}/>
+        </Switch> 
+      </Router>  
+        <ItemCount initial={1} stock={5} onAdd= {onAdd}/>
     </div>
 
     

@@ -1,17 +1,17 @@
+import "./NavBar.css"
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {BsSun} from "react-icons/bs";
-import {AiTwotoneShopping} from "react-icons/ai";
+import {GiPanda} from "react-icons/gi";
+import {GiArmoredPants, GiBilledCap} from "react-icons/gi";
 import {ImAirplane} from "react-icons/im";
-import {FiInstagram} from "react-icons/fi";
-import {FiFacebook} from "react-icons/fi";
-import {FiTwitter}  from "react-icons/fi";
-import {FiPhoneCall}  from "react-icons/fi";
 import {MdWork}  from "react-icons/md";
+import {FaTshirt, FaSnowman} from "react-icons/fa";
+import {AiOutlineWoman, AiOutlineMan} from "react-icons/ai";
 import {BsQuestionOctagon} from "react-icons/bs"
 import CarWidget from '../CarWidget/CarWidget';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,29 +19,39 @@ function NavBar() {
     return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="#home"><BsSun/> Inti</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features"> <AiTwotoneShopping/>Mi tienda</Nav.Link>
-            <Nav.Link href="#pricing"><ImAirplane/>Envios</Nav.Link>
-            <NavDropdown title="Contacto" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1"><FiInstagram/>Instagram</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2"><FiFacebook/>Facebook</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3"><FiTwitter/>Twitter</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4"><FiPhoneCall/>Llamanos</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-          <Nav.Link href="#deets"><CarWidget/></Nav.Link>
-            <Nav.Link href="#deets"><MdWork />Trabaja con nosotros</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-             <BsQuestionOctagon/> FAQ
-            </Nav.Link>
-            
-          </Nav>
-        </Navbar.Collapse>
+          <Link to={`/`}>
+            <Navbar.Brand href="#home"><GiPanda/> Inti</Navbar.Brand>
+          </Link>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+              <Nav.Link href="#pricing"><ImAirplane/>Envios</Nav.Link>
+
+              <NavDropdown title="Hombre" id="collasible-nav-dropdown">
+                 <NavDropdown.Item > <Link to={`/categoria/remeras-h`}><FaTshirt/>Remeras</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><FaSnowman/><Link to={`/categoria/abrigos-h`}>Abrigos</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><GiArmoredPants/><Link to={`/categoria/jeans-h`}>Jeans</Link></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item ><AiOutlineMan/><Link to={`/all/h`}>Todo</Link></NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown title="Mujer" id="collasible-nav-dropdown">                 
+                  <NavDropdown.Item ><FaTshirt/><Link to={`/categoria/remeras-m`}>Remeras</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><FaSnowman/><Link to={`/categoria/abrigos-m`}>Abrigos</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><GiArmoredPants/><Link to={`/categoria/jeans-m`}>Jeans</Link></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item ><AiOutlineWoman/><Link to={`/all/m`}>Todo</Link></NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              <Nav>
+              <Nav.Link href="#deets"><CarWidget/></Nav.Link>
+                <Nav.Link href="#deets"><MdWork />Trabaja con nosotros</Nav.Link>
+                <Nav.Link eventKey={2} href="#memes">
+                <BsQuestionOctagon/> FAQ
+                </Nav.Link>
+                
+              </Nav>
+            </Navbar.Collapse>
         </Container>
       </Navbar>
     )
