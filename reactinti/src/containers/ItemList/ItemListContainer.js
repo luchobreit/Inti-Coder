@@ -9,7 +9,6 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
     const [loading, setLoading] = useState(true)
     const {category} = useParams()
     const {sex}=useParams()
-    console.log(category)
     const productosLista=[
         {id:1, name:"sweater",sexo:"m",categoria:"abrigos-m", description: "rosa con detalles",stock:3, img:"https://statics.glamit.com.ar/media/catalog/product/m/i/mimo_i20b38033y_3y_1.jpg"},
         {id:2, name:"camisa",sexo:"m",categoria:"remeras-m", description: "a cuadros",stock:4, img:"https://d368r8jqz0fwvm.cloudfront.net/2698-product_lg/camisa-de-mujer-pehuen-m-c.jpg"},
@@ -31,6 +30,9 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
         },2000);
       })
     useEffect(() => {
+        if (setLoading){
+            setLoading(true)
+        }
         if (category===undefined) {
             getItems
             .then((resp)=>{
@@ -42,7 +44,6 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
                 .then((resp)=>{
                     setProducts(resp.filter( r => category === r.categoria))
                     setLoading(false)
-                    console.log(products)
                 })
             }
             if (sex !== undefined){
@@ -50,7 +51,6 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
                 .then((resp)=>{
                     setProducts(resp.filter( r => sex === r.sexo))
                     setLoading(false)
-                    console.log(products)
                 })
             }
     },[category, sex])

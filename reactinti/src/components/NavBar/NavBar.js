@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {GiPanda} from "react-icons/gi";
-import {GiArmoredPants, GiBilledCap} from "react-icons/gi";
+import {GiArmoredPants} from "react-icons/gi";
 import {ImAirplane} from "react-icons/im";
 import {MdWork}  from "react-icons/md";
 import {FaTshirt, FaSnowman} from "react-icons/fa";
@@ -29,18 +29,18 @@ function NavBar() {
 
               <NavDropdown title="Hombre" id="collasible-nav-dropdown">
                  <NavDropdown.Item > <Link to={`/categoria/remeras-h`}><FaTshirt/>Remeras</Link></NavDropdown.Item>
-                  <NavDropdown.Item ><FaSnowman/><Link to={`/categoria/abrigos-h`}>Abrigos</Link></NavDropdown.Item>
-                  <NavDropdown.Item ><GiArmoredPants/><Link to={`/categoria/jeans-h`}>Jeans</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/categoria/abrigos-h`}><FaSnowman/>Abrigos</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/categoria/jeans-h`}><GiArmoredPants/>Jeans</Link></NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item ><AiOutlineMan/><Link to={`/all/h`}>Todo</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/all/h`}><AiOutlineMan/>Todo</Link></NavDropdown.Item>
                 </NavDropdown>
 
                 <NavDropdown title="Mujer" id="collasible-nav-dropdown">                 
-                  <NavDropdown.Item ><FaTshirt/><Link to={`/categoria/remeras-m`}>Remeras</Link></NavDropdown.Item>
-                  <NavDropdown.Item ><FaSnowman/><Link to={`/categoria/abrigos-m`}>Abrigos</Link></NavDropdown.Item>
-                  <NavDropdown.Item ><GiArmoredPants/><Link to={`/categoria/jeans-m`}>Jeans</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/categoria/remeras-m`}><FaTshirt/>Remeras</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/categoria/abrigos-m`}><FaSnowman/>Abrigos</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/categoria/jeans-m`}><GiArmoredPants/>Jeans</Link></NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item ><AiOutlineWoman/><Link to={`/all/m`}>Todo</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to={`/all/m`}><AiOutlineWoman/>Todo</Link></NavDropdown.Item>
                 </NavDropdown>
               </Nav>
               <Nav>
