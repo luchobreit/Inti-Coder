@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 
 
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({initial, stock, onAdd, preg,reu}) {
     const [count, setCount] = useState(initial)
-    const [change, setChange] = useState(false)
     const [final, setFinal] = useState(count)
+   
     const handlerAdd = ()=> {
         setCount(count + 1);
         if(stock === count){
@@ -26,13 +26,14 @@ function ItemCount({initial, stock, onAdd}) {
  const handlerOnAdd=()=>{
     onAdd(count)
     setCount(initial)
-    setChange(true)
     setFinal(count)
+    
+   
  }
     return (
      <div className="botonera" >
         {
-            !change ?
+            (preg)   ?
                 <>
                     <div className="operaciones">
                         <Button variant="outline-primary" size="sm" onClick={handlerAdd}>+</Button>

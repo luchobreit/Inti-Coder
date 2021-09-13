@@ -1,0 +1,14 @@
+.fila{
+    margin-top: 90px;
+    padding: auto;
+    height: 100px;
+    text-align: center;
+}
+.imagen{
+    height: 95px;
+}
+
+.col{
+    margin:auto;
+    border-right: 2px solid #000;
+}

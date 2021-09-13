@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './containers/ItemList/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Cart from './components/CarWidget/Cart';
+import Cart from './components/Cart/Cart';
+import CartContextProvider from './Context/CartContext';
+
 
 
 
@@ -15,6 +17,7 @@ import Cart from './components/CarWidget/Cart';
 function App() {
 
   return (
+    <CartContextProvider>
     <div className="Inti">
       <Router>
         <NavBar />
@@ -27,7 +30,7 @@ function App() {
         </Switch> 
       </Router>  
     </div>
-
+    </CartContextProvider>
     
   );
 }
