@@ -14,7 +14,6 @@ function ItemDetail({producto}) {
     const onAdd =(count)=>{
         const hola= window.confirm (`Quieres agregar ${count} al carrito?`)
         setPreg(!hola);
-        console.log(preg);
         if (hola){
           agregarAlCarrito(producto, count)
       }

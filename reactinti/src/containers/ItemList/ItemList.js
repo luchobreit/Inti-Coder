@@ -1,9 +1,10 @@
 import Item from "./Item"
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { memo } from "react";
 
 AOS.init();
-function ItemList({productos}) {
+const ItemList =memo(({productos}) => {
     
     return (
         <>
@@ -17,6 +18,7 @@ function ItemList({productos}) {
          
         </>      
     )
-}
+    }
+)
 
 export default ItemList

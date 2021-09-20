@@ -1,0 +1,15 @@
+.iconCart{
+    display: inline-block;
+    font-size: small;
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+    width: 20px;
+    margin-right: 8px;
+    border-radius: 100%;
+    transition:all 0.4s;
+}
+
+
+.iconCart:hover{
+    background-color: seagreen;
+}

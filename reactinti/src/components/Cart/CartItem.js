@@ -8,10 +8,11 @@ function CartItem({item}) {
     return (
         <div>
             <Row className="fila">
-                <Col className="imagen col"><img className="imagen" src={item.item.img}/></Col>
-                <Col className="nombre col">{item.item.name}</Col>
-                <Col className="cantidad col">{item.quantity}</Col>
-                <Col className="botonera col"><button onClick={()=>borrarItem(item.item.id)}>Borrar item</button></Col>
+                <Col className="imagen colu"><img className="imagen"  src={item.item.img}/></Col>
+                <Col className="nombre colu">{item.item.name}</Col>
+                <Col className="cantidad colu">{item.quantity}</Col>
+                <Col className="precio colu">{item.item.price}</Col>
+                <Col className="botonera colu"><button onClick={()=>borrarItem(item.item.id)}>Borrar item</button></Col>
             </Row>
         </div>
     )

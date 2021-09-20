@@ -4,4 +4,25 @@
 
 .borrarcompra{
     margin-top: 30px;
+    display: inline-block;
+}
+.imagenPanda{
+    margin-left: 35%;
+    height: 100%;
+}
+.texto-vacio{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.link-vacio{
+    text-align: center;
+    height: 100%;
+    height: 70px;
+    margin-left: 48%;
+}
+.total{
+    font-size:x-large;
+    color: rgb(12, 153, 82);
+   font-weight: bold;
 }
