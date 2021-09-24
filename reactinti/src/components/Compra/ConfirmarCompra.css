@@ -1,0 +1,24 @@
+.container-conf{
+    height: 100vh;
+    background-image: url(https://media.istockphoto.com/vectors/briefcase-icon-flat-vector-id1040886442?k=20&m=1040886442&s=612x612&w=0&h=-DZ0HfXSpRBZ68psSy3lWFV6AqCokOrnlftMteYGgrY=);
+    background-repeat: repeat;
+}
+
+.compra-container{
+    margin: auto;
+}
+.input-name{
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    outline: none;
+    margin: 10px;
+}
+
+.table-container{
+    float: initial;
+}
+.but{
+    margin-left: 38%;
+    margin-top: 20px;
+}

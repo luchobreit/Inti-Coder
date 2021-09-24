@@ -9,26 +9,24 @@ import { getFirestore } from "../../components/service/getFirebase";
 
 function ItemDetailContainer() {
     const db = getFirestore()
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
     const {id}=useParams()
     const itemDB= db.collection(`items`).doc(id).get()
+
+
     useEffect(() => {
         itemDB
         .then(prod=>{
-            console.log(prod.data())
-            setProduct(prod.data())
+            setProduct({id: prod.id, ...prod.data()})
             setLoading(false)
         })  
-      })
-    
-
-   console.log(product);
+      },[id])
     return (
         <div className="ItemDetail">       
         {loading ? <Loading route={"/"}/>
         :
-        <ItemDetail producto={product}/>
+        <ItemDetail producto={product} stock={product.stock} ido={id}/>
         }
         </div>
     )

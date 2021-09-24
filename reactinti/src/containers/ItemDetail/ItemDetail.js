@@ -2,21 +2,23 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../../components/ItemCount/ItemCount';
-import { useState, useContext } from 'react';
+import { useState} from 'react';
 import { useCartContext } from '../../Context/CartContext';
+import { useParams } from 'react-router';
 
 
-function ItemDetail({producto}) {
+function ItemDetail({producto,stock,ido}) {
     const [preg, setPreg] = useState(true)
-
+    const{id}=useParams()
     const {agregarAlCarrito} = useCartContext()
 
     const onAdd =(count)=>{
         const hola= window.confirm (`Quieres agregar ${count} al carrito?`)
         setPreg(!hola);
         if (hola){
-          agregarAlCarrito(producto, count)
+          agregarAlCarrito(producto, count,id)
       }
+    
       
     
     }
@@ -34,7 +36,7 @@ function ItemDetail({producto}) {
                     <ListGroupItem>{producto.model} </ListGroupItem>
                     <ListGroupItem>{producto.color}</ListGroupItem>
                     <ListGroupItem>${producto.price} </ListGroupItem>
-                    <ItemCount initial={1} stock={5} onAdd= {onAdd} preg={preg}/>
+                    <ItemCount initial={1} stock={stock} onAdd= {onAdd} preg={preg}/>
                 </ListGroup>
             </Card>
         </div>

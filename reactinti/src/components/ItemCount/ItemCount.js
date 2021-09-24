@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 
 
-function ItemCount({initial, stock, onAdd, preg,reu}) {
+function ItemCount({initial, stock, onAdd, preg}) {
     const [count, setCount] = useState(initial)
     const [final, setFinal] = useState(count)
    

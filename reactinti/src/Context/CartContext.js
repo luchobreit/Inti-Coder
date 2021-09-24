@@ -1,4 +1,6 @@
-import {createContext,useState, useContext} from "react";
+import {createContext,useState, useContext, useEffect} from "react";
+
+
 
 const CartContext = createContext()
 
@@ -17,42 +19,54 @@ function CartContextProvider({children}) {
             setCantidad(false)
         }
     }
-   
+
+    function obtenerId(id) {
+        return product.find(el => el.item.id === id)
+    }
+
+
     function agregarAlCarrito(prod, count){
-        if (isInCart(prod.id)) {
+        if ((obtenerId(prod.id))) {
             alert("este producto ya está en tu carrito")
-        }else{
-            setProduct([...product, {item: prod, quantity: count}])
+        }
+        else{
+            setProduct([...product, {item: prod, quantity: count}]);
         }
        
     }
-        const borrarItem = (itemId) => {
-            const cartFilter = product.filter(element => element.item.id !== itemId)
-            return setProduct(cartFilter)
-        }
+
+
+    const borrarItem = (itemId) => {
+        const cartFilter = product.filter(element => element.item.id !== itemId)
+        return setProduct(cartFilter)
+    }
 
     const borrarListado=()=>{
         setProduct([])
     }
 
-    const isInCart=(id)=>{
-        return product.find(e=>e.item.id===id)
-    }
+
+
 
     const iconCart = ()=>{
         return(product.reduce((acum,valor)=>acum+valor.quantity,0));
     }
+
+
    
     const total =()=>{
 
         return(product.reduce((acum,valor)=>acum+valor.quantity*valor.item.price,0));
     }
+
+    
    
     iconCart()
     return (
         <CartContext.Provider value={{
             product,
             cantidad,
+            obtenerId,
             total,
             setCantidad,
             agregarAlCarrito,

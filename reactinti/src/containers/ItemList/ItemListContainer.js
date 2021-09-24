@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { getFirestore } from "../../components/service/getFirebase";
 
 
-function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur adipiscing elit"}) {
+function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true)
     const {category} = useParams()
@@ -23,9 +23,7 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
             .then(data =>{
                 setProducts(data.docs.map(r =>({id:r.id,...r.data()})))
                 setLoading(false)
-            }).catch(err=>console.log(err))
-            console.log("hola soy products",products);
-            console.log(category);
+            }).catch(err=>console.log(err));
         }else{
             itemDB.where(`categoria`, "==",category).get()
             .then(data =>{
@@ -43,36 +41,6 @@ function ItemListContainer({greeting="Lorem ipsum dolor sit amet, consectetur ad
         
         
     },[category,sex])
-
-
-
-    // useEffect(() => {
-    //     if (setLoading){
-    //         setLoading(true)
-    //     }
-    //     if (category===undefined) {
-    //         itemDB
-    //         .then((resp)=>{
-    //             setProducts(resp)
-    //             setLoading(false)
-                
-    //         }
-    //         )}else{
-    //             itemDB
-    //             .then((resp)=>{
-    //                 setProducts(resp.filter( r => category === r.categoria))
-    //                 setLoading(false)
-    //             })
-    //         }
-    //         if (sex !== undefined){
-    //             itemDB
-    //             .then((resp)=>{
-    //                 setProducts(resp.filter( r => sex === r.sexo))
-    //                 setLoading(false)
-    //             })
-    //         }
-    // },[category, sex])
-    
     
 
     return (

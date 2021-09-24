@@ -7,6 +7,7 @@ import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './Context/CartContext';
+import ConfirmarCompra from './components/Compra/ConfirmarCompra';
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path={"/all/:sex"} component={ItemListContainer}/>
           <Route exact path={"/detalle/:id"} component={ItemDetailContainer}/>
           <Route exact path={`/cart`} component={Cart}/>
+          <Route exact path={`/confcompra`} component={ConfirmarCompra}/>
         </Switch> 
       </Router>  
     </div>

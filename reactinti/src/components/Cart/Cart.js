@@ -8,9 +8,8 @@ import "./cart.css"
 
 function Cart() {
     const {borrarListado, product,cantidad,contador,total}=useCartContext()
+    console.log(product);
     contador ()
-    console.log(total())
-    
     return (
         <>
         {cantidad ?
@@ -21,6 +20,7 @@ function Cart() {
                 <Col className="total">{total()}</Col>
             </Row>
             <button className="btn-outline-danger borrarcompra" onClick={borrarListado}>Borrar Compra</button>
+            <Link to={`/confcompra`}><button>Confirmar Compra</button></Link>
         </div>
         :
         <div className="vacio">
