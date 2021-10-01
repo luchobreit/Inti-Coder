@@ -1,5 +1,5 @@
 import {createContext,useState, useContext, useEffect} from "react";
-
+import { auth } from "../components/service/getFirebase";
 
 
 const CartContext = createContext()
@@ -9,9 +9,12 @@ export const useCartContext = () => useContext(CartContext)
 
 
 function CartContextProvider({children}) {
+    const u =auth.currentUser
     const [product, setProduct] = useState([])
+    const [usuario, setUsuario] = useState(u)
     const [cantidad, setCantidad] = useState(false)
 
+   
    const contador =()=>{
         if (product.length>0) {
             setCantidad(true)
@@ -66,6 +69,8 @@ function CartContextProvider({children}) {
         <CartContext.Provider value={{
             product,
             cantidad,
+            usuario,
+            setUsuario, 
             obtenerId,
             total,
             setCantidad,

@@ -48,9 +48,9 @@ function NavBar() {
                 </NavDropdown>
               </Nav>
               <Nav>
-              <Nav.Link href="#deets"><CarWidget/></Nav.Link>
-                <Nav.Link href="#deets"><MdWork />Trabaja con nosotros</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link><CarWidget/></Nav.Link>
+                <Nav.Link><MdWork />Trabaja con nosotros</Nav.Link>
+                <Nav.Link eventKey={2}>
                 <BsQuestionOctagon/> FAQ
                 </Nav.Link>
                 

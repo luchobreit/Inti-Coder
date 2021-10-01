@@ -5,20 +5,16 @@ import "./CarWidget.css"
 
 
 function CarWidget() {
-    const {iconCart, cantidad, contador} =useCartContext()
+    const {iconCart,contador} =useCartContext()
     contador ()
     return (
         <>
-        {cantidad ?
         <div className="iconCart-container">
             <label className="iconCart">{iconCart()}</label>
             <Link to={`/cart`}>
             <FiShoppingCart />
             </Link>
         </div>
-        :
-        <div></div>
-        }
         </>
     )
 }
