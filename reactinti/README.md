@@ -26,4 +26,5 @@ Las distintas librerias usadas en el sitio web son:
 - [Bootstrap/React-Boostrap](https://github.com/twbs/bootstrap) (_5.0.1/2.0.0-beta.4_)- Front-end framework
 - [React-icons](https://react-icons.github.io/react-icons/) (_4.2.0_) - Librería de iconos 
 - [React-router-dom](https://www.npmjs.com/package/react-router-dom) (_5.2.1_) - Enlaces DOM para React Router.
+- [AOS](https://github.com/michalsnik/aos) (_2.3.4_) - Animacion del scroll.
 
