@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+# Tienda Inti
+## _Ecommerce full Responsive_
+ _Prueba en vivo_
+[![prueba](https://firebasestorage.googleapis.com/v0/b/tienda-inti.appspot.com/o/panda.ico?alt=media&token=a646231b-9798-44e8-b013-16e2e4b1bd12)](https://hungry-boyd-3060a4.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+La Ecommerce INTI es un proyecto desarrollado en un curso de react que cuenta con las siguientes caracteristicas
 
-### `npm start`
+- Es full responsive
+- Trabaja con un modelo sencillo de base de datos
+- Esta hecho 100% con react.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La idea general fue construir un sitio web con una interfaz sencilla y que a la vez sea agradable para el usuario.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Las distintas librerias usadas en el sitio web son:
 
-### `npm run eject`
+- [Firebase](https://console.firebase.google.com/) (_8.9.1_)- Base de datos
+- [Boostrap] - awesome web-based text editor
+- [markdown-it] - Markdown parser done right. Fast and easy to extend.
+- [Twitter Bootstrap] - great UI boilerplate for modern web apps
+- [node.js] - evented I/O for the backend
+- [Express] - fast node.js network app framework [@tjholowaychuk]
+- [Gulp] - the streaming build system
+- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
+to Markdown converter
+- [jQuery] - duh
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+And of course Dillinger itself is open source with a [public repository][dill]
+ on GitHub.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Install the dependencies and devDependencies and start the server.
 
-## Learn More
+```sh
+cd dillinger
+npm i
+node app
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For production environments...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm install --production
+NODE_ENV=production node app
+```
 
-### Code Splitting
+## Plugins
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Dillinger is currently extended with the following plugins.
+Instructions on how to use them in your own application are linked below.
 
-### Analyzing the Bundle Size
+| Plugin | README |
+| ------ | ------ |
+| Dropbox | [plugins/dropbox/README.md][PlDb] |
+| GitHub | [plugins/github/README.md][PlGh] |
+| Google Drive | [plugins/googledrive/README.md][PlGd] |
+| OneDrive | [plugins/onedrive/README.md][PlOd] |
+| Medium | [plugins/medium/README.md][PlMe] |
+| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Development
 
-### Making a Progressive Web App
+Want to contribute? Great!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dillinger uses Gulp + Webpack for fast developing.
+Make a change in your file and instantaneously see your updates!
 
-### Advanced Configuration
+Open your favorite Terminal and run these commands.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+First Tab:
 
-### Deployment
+```sh
+node app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Second Tab:
 
-### `npm run build` fails to minify
+```sh
+gulp watch
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(optional) Third:
+
+```sh
+karma test
+```
+
+#### Building for source
+
+For production release:
+
+```sh
+gulp build --prod
+```
+
+Generating pre-built zip archives for distribution:
+
+```sh
+gulp build dist --prod
+```
+
+## Docker
+
+Dillinger is very easy to install and deploy in a Docker container.
+
+By default, the Docker will expose port 8080, so change this within the
+Dockerfile if necessary. When ready, simply use the Dockerfile to
+build the image.
+
+```sh
+cd dillinger
+docker build -t <youruser>/dillinger:${package.json.version} .
+```
+
+This will create the dillinger image and pull in the necessary dependencies.
+Be sure to swap out `${package.json.version}` with the actual
+version of Dillinger.
+
+Once done, run the Docker image and map the port to whatever you wish on
+your host. In this example, we simply map port 8000 of the host to
+port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
+
+```sh
+docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
+```
+
+> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+
+Verify the deployment by navigating to your server address in
+your preferred browser.
+
+```sh
+127.0.0.1:8000
+```
+
+## License
+
+MIT
+
+**Free Software, Hell Yeah!**
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+   [dill]: <https://github.com/joemccann/dillinger>
+   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
+   [john gruber]: <http://daringfireball.net>
+   [df1]: <http://daringfireball.net/projects/markdown/>
+   [markdown-it]: <https://github.com/markdown-it/markdown-it>
+   [Ace Editor]: <http://ace.ajax.org>
+   [node.js]: <http://nodejs.org>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>
+
+   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
+   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
+   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
+   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
