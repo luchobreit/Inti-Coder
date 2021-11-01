@@ -13,6 +13,7 @@ import ConfirmarCompra from './components/Compra/ConfirmarCompra';
 
 
 
+
   
 
 function App() {
@@ -31,8 +32,10 @@ function App() {
           <Route exact path={`/confcompra`} component={ConfirmarCompra}/>
         </Switch> 
       </Router>  
+      
     </div>
     </CartContextProvider>
+
     
   );
 }

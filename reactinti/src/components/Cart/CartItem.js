@@ -8,7 +8,7 @@ function CartItem({item}) {
     return (
         <div>
             <Row className="fila">
-                <Col className="imagen colu"><img className="imagen"  src={item.item.img}/></Col>
+                <Col className="imagen colu"><img className="imagen" alt="prod" src={item.item.img}/></Col>
                 <Col className="nombre colu">{item.item.name}</Col>
                 <Col className="cantidad colu">{item.quantity}</Col>
                 <Col className="precio colu">{item.item.price}</Col>

@@ -24,7 +24,7 @@ function ItemDetailContainer() {
       },[id])
     return (
         <div className="ItemDetail">       
-        {loading ? <Loading route={"/"}/>
+        {loading ? <Loading/>
         :
         <ItemDetail producto={product} stock={product.stock} ido={id}/>
         }

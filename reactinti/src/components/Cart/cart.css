@@ -82,4 +82,5 @@
 .aqui{
     color: blue;
     text-decoration: underline blue;
+    cursor: pointer;
 }

@@ -18,8 +18,8 @@ function ItemCount({initial, stock, onAdd, preg}) {
     }
     const handlerRm=()=>{
         setCount(count - 1);
-        if (count === 0){
-            setCount(count)
+        if (count === 1){
+            setCount(initial)
         }
     }
 

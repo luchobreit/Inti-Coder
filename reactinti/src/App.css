@@ -1,4 +1,6 @@
 body{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(226,240,254,1) 0%, rgba(255,247,228,1) 90% );;
+    background: rgb(93,93,93);
+    background: linear-gradient(90deg, rgba(93,93,93,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0.9556197478991597) 62%, rgba(93,92,92,1) 97%);
+
     text-align: center;
 }

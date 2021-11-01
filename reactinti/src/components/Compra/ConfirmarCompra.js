@@ -2,7 +2,7 @@ import "./ConfirmarCompra.css"
 import { useCartContext } from "../../Context/CartContext"
 import Table from 'react-bootstrap/Table';
 import ConfirmarCompraItem from "./ConfirmarCompraItem";
-import {useEffect, useState} from "react"
+import {useState} from "react"
 import { getFirestore } from "../../components/service/getFirebase";
 import firebase from "firebase";
 import 'firebase/firestore'
@@ -10,7 +10,6 @@ import 'firebase/firestore'
 function ConfirmarCompra() {
     const {iconCart, product, total, cantidad, usuario, borrarListado}=useCartContext()
     const [formData, setFormData] = useState(initialState)
-    const [checked, setChecked] = useState()
     
 
     formData.email=usuario.email

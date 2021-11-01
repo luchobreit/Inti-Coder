@@ -12,9 +12,6 @@ import "./cart.css"
 
 
 
-
-
-
 function Cart() {
     const [email, setEmail] = useState({})
     const [pass, setPassword] = useState({})
@@ -37,11 +34,12 @@ function Cart() {
             ...emailConfirmation,
             [e.target.name]: e.target.value
         })
+        console.log(emailConfirmation.email);
     }
 
     const registrarUsuario=(e)=>{
         e.preventDefault()
-        auth.createUserWithEmailAndPassword(email, pass)
+        auth.createUserWithEmailAndPassword(emailConfirmation.email, pass)
         .then (res=>setUsuario(auth.currentUser))
         .then(res=>console.log(usuario))
         .catch(
@@ -71,9 +69,6 @@ function Cart() {
     }
 
 
-    if (usuario) {
-        console.log(usuario.email);
-    }
 
 
     return (
@@ -109,7 +104,7 @@ function Cart() {
                     }
                     <AiFillEye className="password" onClick={passwordActive}><button ></button></AiFillEye>
                 </form>
-                <label className="label1" onClick={()=>setLog(!log)}>ya tenes un usuario? ingresa <label className="aqui">aqui</label></label>
+                <label className="label1" onClick={()=>setLog(!log)}>ya tenes un usuario? ingresa<label className="aqui">aqui</label></label>
 
                 
 
@@ -124,7 +119,7 @@ function Cart() {
                     <input className="logger" onChange={(e=>{setPassword(e.target.value)})} type={check ? "password": "text"} placeholder="pasword"></input>
                     <AiFillEye className="password" onClick={passwordActive}><button ></button></AiFillEye>
                     <button className="logger boton btn btn-outline-secondary" onClick={logInUsuario}>Ingresar</button>
-                    <label className="label1" onClick={()=>setLog(!log)}>no tenes un usuario? ingresa <a className="aqui">aqui</a></label>
+                    <label className="label1" onClick={()=>setLog(!log)}>no tenes un usuario? ingresa <label className="aqui">aqui</label></label>
                 </form>
                 </>
                 }
