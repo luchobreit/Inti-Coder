@@ -1,7 +1,7 @@
 # Tienda Inti
 ## _Ecommerce full Responsive_
  _Prueba en vivo_
-[![prueba](https://firebasestorage.googleapis.com/v0/b/tienda-inti.appspot.com/o/panda.ico?alt=media&token=a646231b-9798-44e8-b013-16e2e4b1bd12)](https://hungry-boyd-3060a4.netlify.app/)
+[![prueba](https://firebasestorage.googleapis.com/v0/b/tienda-inti.appspot.com/o/panda.ico?alt=media&token=a646231b-9798-44e8-b013-16e2e4b1bd12)](https://inticomerce.netlify.app/)
 
 
 
